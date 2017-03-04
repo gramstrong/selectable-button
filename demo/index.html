@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>selectable-button demo</title>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../selectable-button.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic selectable-button demo</h3>
+      <demo-snippet>
+        <template>
+          <selectable-button 
+              button-value='{"title": "Select", "value": "1"}'
+              is-selected="false"
+          ></selectable-button>
+        </template>
+      </demo-snippet>
+      <script>
+          document.querySelector('template').addEventListener('button-select', function(){
+              document.querySelector('selectable-button').isSelected = true;
+          });
+          document.querySelector('template').addEventListener('button-deselect', function(){
+              document.querySelector('selectable-button').isSelected = false;
+          });
+      </script>
+    </div>
+  </body>
+</html>
